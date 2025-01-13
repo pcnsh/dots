@@ -1,0 +1,34 @@
+# Author : Tomas Ruud <git@me.2ms.no>
+
+"ui.text" = "light-gray"
+"ui.selection" = { fg = "white", bg = "gray" }
+"ui.cursor" = { fg = "black", bg = "light-gray" }
+"ui.cursor.primary" = { fg = "black", bg = "light-gray" }
+"ui.cursor.match" = { modifiers = ["underlined"] }
+"ui.background.separator" = "gray"
+"ui.linenr" = "#393939"
+"ui.linenr.selected" = { fg = "light-gray", bg = "#141414" }
+"ui.statusline" = { bg = "#141414", fg = "#393939" }
+"ui.menu" = { fg = "light-gray", bg = "#141414" }
+"ui.menu.selected" = { bg = "light-gray", fg = "black" }
+"ui.popup" = { fg = "light-gray", bg = "#141414" }
+"ui.help" = { fg = "light-gray", bg = "#141414" }
+"ui.virtual.ruler" = { underline = { style = "line"} }
+
+"string" = { bg = "light-green", fg = "black" }
+"constant" = { bg = "light-cyan", fg = "black" }
+"comment" = { bg = "light-magenta", fg = "black" }
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "gray"
+
+"warning" = { fg = "black", bg = "light-yellow" }
+"error" = { fg = "black", bg = "light-red" }
+"hint" = { fg = "black", bg = "light-blue" }
+
+"diagnostic.warning" = { fg = "black", bg = "light-yellow" }
+"diagnostic.error" = { fg = "black", bg = "light-red" }
+"diagnostic.hint" = { fg = "black", bg = "light-blue" }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
