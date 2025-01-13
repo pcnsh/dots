@@ -23,9 +23,9 @@
 "diff.minus" = "red"
 "diff.delta" = "gray"
 
-"warning" = { fg = "black", bg = "light-yellow" }
-"error" = { fg = "black", bg = "light-red" }
-"hint" = { fg = "black", bg = "light-blue" }
+"warning" = { fg = "light-yellow", bg = "#141414" }
+"error" = { fg = "light-red", bg =  "#141414"}
+"hint" = { fg = "light-blue", bg = "141414" }
 
 "diagnostic.warning" = { fg = "black", bg = "light-yellow" }
 "diagnostic.error" = { fg = "black", bg = "light-red" }
