@@ -1,5 +1,3 @@
-# Author : Tomas Ruud <git@me.2ms.no>
-
 "ui.text" = "light-gray"
 "ui.selection" = { fg = "white", bg = "gray" }
 "ui.cursor" = { fg = "black", bg = "light-gray" }
