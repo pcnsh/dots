@@ -10,14 +10,15 @@
 "ui.linenr.selected" = { fg = "light-gray", bg = "#141414" }
 "ui.statusline" = { bg = "#141414", fg = "#393939" }
 "ui.menu" = { fg = "light-gray", bg = "#141414" }
-"ui.menu.selected" = { bg = "light-gray", fg = "black" }
+"ui.menu.selected" = { bg = "light-gray", fg = "#141414" }
 "ui.popup" = { fg = "light-gray", bg = "#141414" }
 "ui.help" = { fg = "light-gray", bg = "#141414" }
 "ui.virtual.ruler" = { underline = { style = "line"} }
+"ui.cursorline.primary" = "#ffffff"
 
-"string" = { bg = "light-green", fg = "black" }
-"constant" = { bg = "light-cyan", fg = "black" }
-"comment" = { bg = "light-magenta", fg = "black" }
+"string" = { bg = "light-green", fg = "#141414" }
+"constant" = { bg = "light-cyan", fg = "#141414" }
+"comment" = { bg = "light-magenta", fg = "#141414" }
 
 "diff.plus" = "green"
 "diff.minus" = "red"
