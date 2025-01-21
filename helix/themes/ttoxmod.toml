@@ -1,33 +1,50 @@
-"ui.text" = "light-gray"
-"ui.selection" = { fg = "white", bg = "gray" }
-"ui.cursor" = { fg = "black", bg = "light-gray" }
-"ui.cursor.primary" = { fg = "black", bg = "light-gray" }
+# ttoxmod
+# Author : pcnsh <https://github.com/pcnsh>
+
+"ui.background" = { fg = "white", bg = "black" }
+"ui.text" = "white"
+"ui.selection" = { fg = "black", bg = "green" }
+"ui.cursor" = { fg = "black", bg = "white" }
+"ui.cursor.primary" = { fg = "black", bg = "white" }
 "ui.cursor.match" = { modifiers = ["underlined"] }
-"ui.background.separator" = "gray"
-"ui.linenr" = "#393939"
-"ui.linenr.selected" = { fg = "light-gray", bg = "#141414" }
-"ui.statusline" = { bg = "#141414", fg = "#393939" }
-"ui.menu" = { fg = "light-gray", bg = "#141414" }
-"ui.menu.selected" = { bg = "light-gray", fg = "#141414" }
-"ui.popup" = { fg = "light-gray", bg = "#141414" }
-"ui.help" = { fg = "light-gray", bg = "#141414" }
+"ui.background.separator" = "black"
+"ui.linenr" = "gray"
+"ui.linenr.selected" = { fg = "white", bg = "black" }
+"ui.statusline" = { bg = "black", fg = "gray" }
+"ui.menu" = { fg = "white", bg = "black" }
+"ui.menu.selected" = { bg = "white", fg = "black" }
+"ui.popup" = { fg = "white", bg = "black" }
+"ui.help" = { fg = "white", bg = "black" }
 "ui.virtual.ruler" = { underline = { style = "line"} }
 "ui.cursorline.primary" = "#ffffff"
 
-"string" = { bg = "light-green", fg = "#141414" }
-"constant" = { bg = "light-cyan", fg = "#141414" }
-"comment" = { bg = "light-magenta", fg = "#141414" }
+"string" = { fg = "green", bg = "black" }
+"constant" = { fg = "cyan", bg = "black" }
+"comment" = { bg = "magenta", fg = "black" }
 
 "diff.plus" = "green"
 "diff.minus" = "red"
 "diff.delta" = "gray"
 
-"warning" = { fg = "light-yellow", bg = "#141414" }
-"error" = { fg = "light-red", bg =  "#141414"}
-"hint" = { fg = "light-blue", bg = "141414" }
+"warning" = { fg = "yellow", bg = "black" }
+"error" = { fg = "red", bg =  "black"}
+"hint" = { fg = "blue", bg = "black" }
 
-"diagnostic.warning" = { fg = "black", bg = "light-yellow" }
-"diagnostic.error" = { fg = "black", bg = "light-red" }
-"diagnostic.hint" = { fg = "black", bg = "light-blue" }
+"diagnostic.warning" = { fg = "black", bg = "yellow" }
+"diagnostic.error" = { fg = "black", bg = "red" }
+"diagnostic.hint" = { fg = "black", bg = "blue" }
 "diagnostic.unnecessary" = { modifiers = ["dim"] }
 "diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+[palette]
+
+black = "#141414"
+green = "#72d5a3"
+magenta = "#ec93d3"
+yellow = "#f0dfaf"
+red = "#dca3a3"
+blue = "#94bff3"
+cyan = "#93e0e3"
+
+white = "#dcdccc"
+gray = "#393939"
