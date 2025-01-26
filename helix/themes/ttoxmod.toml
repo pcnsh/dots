@@ -22,6 +22,12 @@
 "constant" = { fg = "cyan", bg = "black" }
 "comment" = { bg = "magenta", fg = "black" }
 
+"keyword" = "magenta"
+"operator" = "magenta"
+"special" = "yellow"
+
+"variable" = "yellow"
+
 "diff.plus" = "green"
 "diff.minus" = "red"
 "diff.delta" = "gray"
