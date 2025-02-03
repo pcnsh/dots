@@ -18,15 +18,15 @@
 "ui.virtual.ruler" = { underline = { style = "line"} }
 "ui.cursorline.primary" = "#ffffff"
 
-"string" = { fg = "green", bg = "black" }
+"string" = { bg = "green", fg = "black" }
 "constant" = { fg = "cyan", bg = "black" }
 "comment" = { bg = "magenta", fg = "black" }
 
-"keyword" = "magenta"
-"operator" = "magenta"
-"special" = "yellow"
+# "keyword" = "magenta"
+# "operator" = "magenta"
+# "special" = "yellow"
 
-"variable" = "yellow"
+# "variable" = "blue"
 
 "diff.plus" = "green"
 "diff.minus" = "red"
