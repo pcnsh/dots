@@ -1,23 +1,52 @@
-theme = "ttoxmod"
+theme = "vesper"
 
 [editor]
-end-of-line-diagnostics = "hint"
-[editor.inline-diagnostics]
-cursor-line = "warning" # show warnings and errors on the cursorline inline
+cursorline = true
+auto-completion = true
+auto-format = true
+idle-timeout = 250
+preview-completion-insert = true
+completion-trigger-len = 2
+auto-info = true
+bufferline = "always"
+popup-border = "none"
+# scroll-lines = 5
+true-color = true
 
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+[editor.soft-wrap]
+enable = true
 
 [editor.statusline]
 left = ["mode", "spinner"]
-center = ["file-name"]
-right = ["file-encoding", "file-line-ending", "file-type"]
-separator = "|"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+# center = ["file-name"]
+right = [ "position", "file-line-ending"]
+separator = "│"
+mode.normal = "normal"
+mode.insert = "insert"
+mode.select = "select"
 
-[keys.normal]
-"A-q" = "extend_line_up"
+[editor.lsp]
+snippets = true
+# Disable automatically popups of signature parameter help
+auto-signature-help = false
+# Show LSP messages in the status line
+display-messages = true
+
+[editor.file-picker]
+ignore = true
+git-ignore = true
+
+[editor.inline-diagnostics]
+# cursor-line = "enable"
+
+[editor.indent-guides]
+character = "│"
+render = true
+# skip-levels = 1
+
+# [editor.gutters.line-numbers]
+# min-width = 40
+

@@ -7,41 +7,26 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "outline_panel": {
-    "dock": "left"
+  "project_panel": {
+    "dock": "right"
   },
-  "vim_mode": false,
-  "tab_bar": {
-    "show_nav_history_buttons": false,
-    "show": false
-  },
-  "tab_size": null,
-  // "buffer_line_height": {
-  //   "custom": 2
-  // },
-
   "ui_font_size": 16,
-  "show_user_picture": false,
-  "cursor_shape": "hollow",
-  "scrollbar": {
-    "show": "never"
-  },
-  "toolbar": {
-    "quick_actions": false,
-    "selections_menu": false,
-    "breadcrumbs": true
-  },
-  "unstable.ui_density": "comfortable",
-  "buffer_font_size": 20,
-
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-
+  "buffer_font_size": 36,
   "theme": {
     "mode": "system",
-    "light": "Vitesse Light",
-    "dark": "Vitesse Black"
+    "light": "One Light",
+    "dark": "Rich Vesper"
+  },
+  "ui_font_family": "SF Pro Display",
+  "buffer_font_family": "Liga SFMono Nerd Font",
+  "scrollbar": { "show": "never" },
+  "unstable.ui_density": "comfortable",
+  "tab_bar": { "show": false },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "title_bar": {
+    "show_sign_in": false
   }
 }
