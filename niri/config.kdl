@@ -13,14 +13,14 @@ input {
         // off
         tap
         natural-scroll
-        accel-speed 0.9
+        accel-speed 0.6
         accel-profile "flat"
     }
 }
 
 output "eDP-1" {
     mode "2240x1400@60.021"
-    scale 1
+    scale 1.7
     transform "normal"
     position x=1400 y=0
 }
@@ -33,8 +33,8 @@ cursor {
 }
 
 overview {
-    zoom 0.7
-    backdrop-color "#0f0f0f"
+    zoom 0.6
+    backdrop-color "#13110e"
 
     workspace-shadow {
         off
@@ -46,18 +46,19 @@ overview {
 }
 
 layout {
-    gaps 12
+    gaps 8
     center-focused-column "never"
     preset-column-widths {
-        proportion 0.60
         proportion 0.5
-        proportion 0.66667
+        proportion 0.7
+        proportion 0.9
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.9; }
 
     focus-ring {
-        width 0.5
+        off
+        width 1.0
         active-color "#000000"
         inactive-color "#000000"
         // active-gradient from="#404040" to="#404040" angle=45
@@ -65,29 +66,29 @@ layout {
     }
 
     border {
-        width 0.1
-        active-color "#303030"
-        inactive-color "#404040"
+        width 1.0
+        active-color "#202020"
+        inactive-color "#202020"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
 
         // active-gradient from="#404040" to="#101010" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#303030" to="#101010" angle=45 relative-to="workspace-view"
+        // inactive-gradient from="#303030" to="#101010" angle=45 relative-to="workspace-view"
     }
 
     shadow {
-        // on
+        on
         draw-behind-window true
-        softness 40
-        spread 10
+        softness 1
+        spread 0.5
         offset x=0 y=0
-        color "#0007"
+        color "#000"
     }
 
     struts {
-        left 64
-        right 64
+        // left 64
+        // right 64
         // top 64
         // bottom 64
     }
@@ -96,85 +97,46 @@ layout {
 spawn-at-startup "play-with-mpv"
 spawn-at-startup "gammastep" "-O" "5000"
 spawn-at-startup "qs" "-p" "/home/pcnsh/www/qs-isopode"
-spawn-at-startup "swaybg" "-i" "/home/pcnsh/Pictures/wpp/dg.jpg" "-m" "fill" "-c" "#000000"
+spawn-at-startup "swaybg" "-i" "/home/pcnsh/Pictures/wpp/10.png" "-m" "fill" "-c" "13110e"
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
-    // slowdown 1.0
-    off    
+    // slowdown 1.8
+    // off    
 
     overview-open-close {
-        spring damping-ratio=2.0 stiffness=4000 epsilon=0.0001
+        spring damping-ratio=1.4 stiffness=5000 epsilon=0.0001
     }
     
-    workspace-switch {
-        spring damping-ratio=1.0 stiffness=2000 epsilon=0.0001
-    }
-
     horizontal-view-movement {
-        spring damping-ratio=2.0 stiffness=4000 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=5000 epsilon=0.0001
     }
-
-
-    // i didnt make the shaders
-    // https://gitlab.com/sharkler/sharkler-dots/-/blob/main/.config/niri/config.kdl
-
-    window-open {
-        duration-ms 150
-        curve "linear"
-        custom-shader r"
-
-        vec4 expanding_circle(vec3 coords_geo, vec3 size_geo) {
-        vec3 coords_tex = niri_geo_to_tex * coords_geo;
-        vec4 color = texture2D(niri_tex, coords_tex.st);
-        vec2 coords = (coords_geo.xy - vec2(0.5, 0.5)) * size_geo.xy * 2.0;
-        coords = coords / length(size_geo.xy);
-        float p = niri_clamped_progress;
-        if (p * p <= dot(coords, coords))
-        color = vec4(0.0);
-
-        return color;
-        }
-
-        vec4 open_color(vec3 coords_geo, vec3 size_geo) {
-        return expanding_circle(coords_geo, size_geo);
-        }
-        "
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=5000 epsilon=0.0001
     }
+    // window-resize {
+    //     spring damping-ratio=1.0 stiffness=2000 epsilon=0.0001
+    // }
 
-
-
-    window-close {
-        duration-ms 250
-        curve "linear"
+    window-resize {
         custom-shader r"
-            vec4 fall_and_rotate(vec3 coords_geo, vec3 size_geo) {
-            float progress = niri_clamped_progress * niri_clamped_progress;
-            vec2 coords = (coords_geo.xy - vec2(0.5, 1.0)) * size_geo.xy;
-            coords.y -= progress * 1440.0;
-            float random = (niri_random_seed - 0.5) / 2.0;
-            random = sign(random) - random;
-            float max_angle = 0.5 * random;
-            float angle = progress * max_angle;
-            mat2 rotate = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
-            coords = rotate * coords;
-            coords_geo = vec3(coords / size_geo.xy + vec2(0.5, 1.0), 1.0);
-            vec3 coords_tex = niri_geo_to_tex * coords_geo;
-            vec4 color = texture2D(niri_tex, coords_tex.st);
-
-            return color;
-            }
-
-            vec4 close_color(vec3 coords_geo, vec3 size_geo) {
-            return fall_and_rotate(coords_geo, size_geo);
+            vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+                vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;
+                vec4 color = texture2D(niri_tex_next, coords_tex_next.st);
+                return color;
             }
         "
     }
+    config-notification-open-close {
+        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+    }
 
-    
-
-        screenshot-ui-open {
+    window-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+        
+    screenshot-ui-open {
         duration-ms 400
         curve "ease-out-quad"
     }
@@ -185,7 +147,7 @@ window-rule {
     match app-id="rio"
     // default-column-width { proportion 0.4; }
     // default-window-height { fixed 500; }
-    draw-border-with-background true
+    // draw-border-with-background true
     // default-floating-position x=30 y=30 relative-to="bottom-left"
     // open-floating true
     open-maximized true
@@ -294,7 +256,7 @@ environment {
 binds {
    Mod+Shift+Slash { show-hotkey-overlay; }
 
-   Mod+T hotkey-overlay-title="Open a Terminal: Rio" { spawn "rio"; }
+   Mod+T hotkey-overlay-title="Open a Terminal: Alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: tofi" { spawn "tofi-drun"  "--drun-launch=true"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
