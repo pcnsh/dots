@@ -86,12 +86,12 @@ layout {
         color "#000"
     }
 
-    struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
-    }
+    // struts {
+    //     left 164
+    //     right 164
+    //     top 110
+    //     bottom 110
+    // }
 }
 
 spawn-at-startup "play-with-mpv"
@@ -102,18 +102,18 @@ spawn-at-startup "swaybg" "-i" "/home/pcnsh/Pictures/wpp/10.png" "-m" "fill" "-c
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
-    // slowdown 1.8
-    // off    
+    // slowdown 2.0
+    off    
 
     overview-open-close {
         spring damping-ratio=1.4 stiffness=5000 epsilon=0.0001
     }
     
     horizontal-view-movement {
-        spring damping-ratio=1.0 stiffness=5000 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
     }
     workspace-switch {
-        spring damping-ratio=1.0 stiffness=5000 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
     }
     // window-resize {
     //     spring damping-ratio=1.0 stiffness=2000 epsilon=0.0001
@@ -180,21 +180,29 @@ window-rule {
 }
 
 window-rule {
-    match app-id="dev.zed.Zed"
+    match app-id="dev.zed.Zed$"
     // draw-border-with-background true
     open-maximized true
+
+    shadow {
+        off
+    }
+    border {
+        off
+    }
+    // max-width 200
 }
 
 window-rule {
     match app-id="org.pwmt.zathura"
-    max-width 876
+    max-width 650
     focus-ring {
             off
         }
     border {
         // off
-        active-color "#969696"
-        inactive-color "#969696"
+        active-color "#ffffff50"
+        inactive-color "#ffffff50"
     }
 }
 
